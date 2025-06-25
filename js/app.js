@@ -14,8 +14,7 @@ function setGoodsBlockLoaded() {
     const goodsBlock = document.getElementById('goodsBlock');
     const goodsBlockOffset = goodsBlock.offsetTop;
     const windowHeight = window.innerHeight;
-    
-    window.addEventListener('scroll', function() {
+ window.addEventListener('scroll', function() {
         let scrolled = window.pageYOffset;
         if (scrolled + windowHeight > goodsBlockOffset + GOODS_BLOCK_OFFSET) {
             if (!reached) {
@@ -23,10 +22,7 @@ function setGoodsBlockLoaded() {
                 reached = true;
             }
         }
-        
-    })
-
+    });
 }
-
 
 
