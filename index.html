@@ -70,10 +70,27 @@
             <p class="form_text">
                 В рассылке мы сообщаем о наших акциях и специальных предложениях. Вы можете получать эту информацию из первых рук.
             </p>
+            
             <form class="subscribe_form" action="php/php.php" method="get">
+                <input class="form_input" type="text" name="name" placeholder="Введите ваше имя">
                 <input class="form_input" type="text" name="name" placeholder="Введите email">
+                <input class="form_input" type="text" name="name" placeholder="Введите периодичность" list = "date">
+                <datalist id="date">
+                    <option value="Раз в неделю">
+                    <option value="Раз в месяц">
+                  </datalist>
+                <div class ="wrapper">
+                    <input class="checkbox" type="checkbox" name="checkbox1" id="checkbox1">
+                    <label for="checkbox1">Акции и скидки</label>
+                </div>
+                <div class ="wrapper">
+                    <input class="checkbox" type="checkbox" name="checkbox2" id="checkbox2">
+                    <label for="checkbox2">Новые статьи в блоге</label>
+                </div>
+                <div class ="wrapper">
+                    <img class="img_arrow" src="images/arrow_down.png" alt="arrow">
+                </div>
                 <button class="form_button" type="submit">Подписаться</button>
-                <img class="email_img" src="images/email.png" alt="email">
             </form>
         </div>
         <div class="bottom_menu">
