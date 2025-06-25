@@ -27,35 +27,15 @@
     border: none;
 }
 
-
-.top_menu {
-    width: 100%; 
-    background-color: #fff;
-    position: fixed;
-    margin-top: -80px;
-    text-align: center; 
+.top_menu
+{
+    text-align: center;
 }
-
-.top_menu .menu {
-    list-style: none; 
-    padding: 0px; 
-    display: flex; 
-    justify-content: center; 
-    margin: 0 auto; 
-}
-      
-    .top_menu .menu_item {
-    margin-right: 10px; 
-    }
-      
-    .top_menu .menu_item:last-child {
-    margin-right: 0; 
-    }
-
 
 .menu_item
 {
     list-style: none;
+	display: inline-block;
 }
 
 .menu_link
@@ -76,8 +56,6 @@
     background-size: cover;
     padding: 175px 0;
     text-align: center;
-    margin-top: 80px;
-
 }
 
 .top_block_title_wrapper
@@ -95,14 +73,24 @@
     line-height: 64px;
     font-weight: 500;
     text-transform: uppercase;
+    opacity: 0; 
+    transform: translateY(20px); 
+    animation: fadeInUp 1s forwards; 
 }
 
+@keyframes fadeInUp {
+    to {
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
 .content_wrapper
 {
     padding: 60px 20px;
     width: 1000px;
     margin: 0 auto;
 }
+
 
 .content_title
 {
@@ -130,7 +118,6 @@
 {
     margin: 0 0 40px;
     padding: 0 0 0 20px;
-    list-style: url('../images/coffee-bean.png');
 }
 
 .content_list_item
@@ -155,8 +142,25 @@
     border-radius: 26px;
     padding: 0 50px;
     display: inline-block;
+    text-decoration: none;    
+}
+
+
+.button_light
+{
+    background: none;
+    color: #0fa8ea;
+	border: 1px solid #0fa8ea;
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    line-height: 52px;
+    font-weight: 700;
+    border-radius: 26px;
+    padding: 0 50px;
+    display: inline-block;
     text-decoration: none;
 }
+
 
 .order_title
 {
@@ -174,33 +178,53 @@
     display: inline-block;
     width: 430px;
     margin-right: 110px;
-    vertical-align:middle;
+    vertical-align: middle;
 }
 
 .order_picture_wrapper
 {
     display: inline-block;
-    
-    vertical-align:middle;
+    vertical-align: middle;
 }
 
 
-.bottom_menu {
+.bottom_menu
+{
     background: #e8e6eb;
-    
-    .menu {
-    list-style: none; 
-    margin: 0px; 
-    padding: 0px; 
-    display: flex; 
-    justify-content:center; 
-    }
-  
-    .top_menu .menu_item {
-    margin-right: 10px; 
-    }
-  
-    .top_menu .menu_item:last-child {
-    margin-right: 0; 
-    }
+    text-align: center;
+}
+.goods_block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0; 
+    transition: opacity 0.5s ease; 
+}
+
+.goods_block_loaded {
+    opacity: 1; 
+}
+
+.order_text_wrapper {
+    max-width: 430px;
+    margin-right: 20px; 
+    transform: translateX(-50px); 
+    opacity: 0; 
+    transition: opacity 0.5s ease, transform 0.5s ease; 
+}
+
+.order_picture_wrapper {
+    transform: translateX(50px);
+    opacity: 0; 
+    transition: opacity 0.5s ease, transform 0.5s ease; 
+}
+
+.goods_block_loaded .order_text_wrapper {
+    transform: translateX(0); 
+    opacity: 1; 
+}
+
+.goods_block_loaded .order_picture_wrapper {
+    transform: translateX(0); 
+    opacity: 1; 
 }
